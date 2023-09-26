@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
-import Clients from "../screens/Clients";
 import { SimpleLineIcons, Ionicons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { useIsFocused } from "@react-navigation/native";
+import StackRoutes from "./stack.routes";
+import { getTabBarIcon } from "./tabIcons";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -25,37 +26,15 @@ const TabNavigator = () => {
         component={Home}
         options={{
           title: "",
-          tabBarIcon: (size, color) => {
-            const isFocused = useIsFocused();
-            return (
-              <SimpleLineIcons
-                name="home"
-                size={24}
-                color={
-                  isFocused ? theme.COLORS.GREEN500 : theme.COLORS.GREEN100
-                }
-              />
-            );
-          },
+          tabBarIcon: () => getTabBarIcon("Home"),
         }}
       />
       <Screen
-        name="Clients"
-        component={Clients}
+        name="Stacks"
+        component={StackRoutes}
         options={{
           title: "",
-          tabBarIcon: (size, color) => {
-            const isFocused = useIsFocused();
-            return (
-              <Ionicons
-                name="person-outline"
-                size={24}
-                color={
-                  isFocused ? theme.COLORS.GREEN500 : theme.COLORS.GREEN100
-                }
-              />
-            );
-          },
+          tabBarIcon: () => getTabBarIcon("Stacks"),
         }}
       />
     </Navigator>

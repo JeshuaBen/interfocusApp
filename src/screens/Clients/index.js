@@ -1,22 +1,23 @@
 import * as S from "./styles";
 import ClientsCard from "../../components/ClientsCard";
-import { EvilIcons, AntDesign } from "@expo/vector-icons";
+import { EvilIcons, Entypo } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
+import Header from "../../components/Header";
 
-const Clients = () => {
+const Clients = ({ navigation }) => {
   const theme = useTheme();
 
   return (
     <S.Container>
-      <S.Title>Clientes</S.Title>
+      <Header title="Clientes" />
 
       <S.FilterBox>
         <S.Input placeholder="Digite o nome do cliente" />
         <EvilIcons name="search" size={24} color={theme.COLORS.GRAY100} />
       </S.FilterBox>
 
-      <S.RoundedButton>
-        <AntDesign name="plus" size={24} color={theme.COLORS.WHITE} />
+      <S.RoundedButton onPress={() => navigation.navigate("NewClient")}>
+        <Entypo name="plus" size={30} color={theme.COLORS.WHITE} />
       </S.RoundedButton>
 
       <S.Content>

@@ -1,5 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./bottom.routes";
+import NewClient from "../screens/NewClient";
+import Clients from "../screens/Clients";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -9,9 +11,9 @@ const StackRoutes = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="Tabs"
     >
-      <Screen name="Tabs" component={TabNavigator} />
+      <Screen name="Clients" component={Clients} />
+      <Screen name="NewClient" component={NewClient} />
     </Navigator>
   );
 };

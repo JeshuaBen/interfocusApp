@@ -1,6 +1,7 @@
 import * as S from "./styles";
 
 import DebtCard from "../../components/DebtCard";
+import Header from "../../components/Header";
 
 const Home = () => {
   const temporaryCardInfos = [
@@ -24,7 +25,7 @@ const Home = () => {
   return (
     <>
       <S.Container>
-        <S.Title>Resumo de dívidas</S.Title>
+        <Header title="Resumo de dívidas" />
 
         <S.Content>
           {temporaryCardInfos.map((value, index) => (
