@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components/native";
 
+import * as S from "@react-native-picker/picker";
+
 export const Container = styled.View`
   gap: 4px;
   margin-bottom: 16px;
@@ -14,8 +16,30 @@ export const Label = styled.Text`
 `;
 
 export const Input = styled.TextInput`
-  border: 1px solid ${({ theme }) => theme.COLORS.GRAY100};
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY50};
   border-radius: 8px;
   padding: 6px 6px 6px 8px;
   width: 100%;
+`;
+
+export const SelectWrapper = styled.View`
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY600};
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Select = styled(S.Picker)`
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+`;
+
+export const SelectIos = styled(S.PickerIOS)``;
+
+export const SelectItem = styled(S.Picker.Item)`
+  align-self: center;
 `;

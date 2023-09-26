@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-const Header = ({ buttonVariant, title, onPress }) => {
+const Header = ({ buttonVariant = false, title, onPress }) => {
   return (
     <S.Container>
       {buttonVariant && (
