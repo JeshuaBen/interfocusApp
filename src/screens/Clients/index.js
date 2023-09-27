@@ -7,6 +7,10 @@ import Header from "../../components/Header";
 const Clients = ({ navigation }) => {
   const theme = useTheme();
 
+  const handleNavigateClientProfile = (id) => {
+    navigation.navigate("ClientProfile", { id });
+  };
+
   return (
     <S.Container>
       <Header title="Clientes" />
@@ -23,39 +27,17 @@ const Clients = ({ navigation }) => {
       <S.Content>
         <ClientsCard
           title="Maria Helena de Rodrigues"
-          document="000000000"
+          document="000.000.000-00"
           email="email@email.com"
           amount="R$ 990,90"
+          onPress={() => handleNavigateClientProfile(1)}
         />
         <ClientsCard
-          title="Maria Helena de Rodrigues"
-          document="000000000"
+          title="Sandra Elisa Farias de Jesus"
+          document="668.622.304-25"
           email="email@email.com"
           amount="R$ 990,90"
-        />
-        <ClientsCard
-          title="Maria Helena de Rodrigues"
-          document="000000000"
-          email="email@email.com"
-          amount="R$ 990,90"
-        />
-        <ClientsCard
-          title="Maria Helena de Rodrigues"
-          document="000000000"
-          email="email@email.com"
-          amount="R$ 990,90"
-        />
-        <ClientsCard
-          title="Maria Helena de Rodrigues"
-          document="000000000"
-          email="email@email.com"
-          amount="R$ 990,90"
-        />
-        <ClientsCard
-          title="Maria Helena de Rodrigues"
-          document="000000000"
-          email="email@email.com"
-          amount="R$ 990,90"
+          onPress={() => handleNavigateClientProfile(2)}
         />
       </S.Content>
     </S.Container>

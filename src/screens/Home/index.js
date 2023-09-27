@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-import DebtCard from "../../components/DebtCard";
+import AllDebts from "../../components/AllDebts";
 import Header from "../../components/Header";
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
 
         <S.Content>
           {temporaryCardInfos.map((value, index) => (
-            <DebtCard
+            <AllDebts
               key={index}
               title={value.title}
               quantity={value.quantity}

@@ -1,17 +1,11 @@
 import styled, { css } from "styled-components/native";
-import { TouchableOpacity } from "react-native";
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled.View`
   width: 100%;
-  padding: 16px 16px 12px 16px;
+  padding: 16px;
+  gap: 14px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
-  margin-bottom: 16px;
-`;
-
-export const Content = styled.View`
-  width: 100%;
-  gap: 10px;
 `;
 
 export const Title = styled.Text`
@@ -24,7 +18,7 @@ export const Title = styled.Text`
 
 export const Wrapper = styled.View`
   flex-direction: row;
-  gap: 6px;
+  justify-content: space-between;
 `;
 
 export const StrongText = styled.Text`
@@ -39,25 +33,6 @@ export const Text = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.REGULAR};
     font-size: ${theme.FONT_SIZE.SM}px;
-    color: ${theme.COLORS.GRAY800};
-  `};
-`;
-
-export const Separator = styled.View`
-  height: 1px;
-  width: 100%;
-  background-color: ${({ theme }) => theme.COLORS.GRAY50};
-`;
-
-export const ValueWrapper = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const Amount = styled.Text`
-  ${({ theme }) => css`
-    font-family: ${theme.FONT_FAMILY.BOLD};
-    font-size: ${theme.FONT_SIZE.MD}px;
     color: ${theme.COLORS.GRAY800};
   `};
 `;

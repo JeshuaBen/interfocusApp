@@ -4,7 +4,7 @@ import { FlatList, ScrollView } from "react-native";
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
-  padding: 16px;
+  padding: 16px 16px 0px 16px;
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
 `;
 

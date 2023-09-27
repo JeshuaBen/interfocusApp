@@ -1,9 +1,10 @@
 import * as S from "./styles";
 import { Platform } from "react-native";
 
-const ClientsCard = ({ title, document, email, amount }) => {
+const ClientsCard = ({ title, document, email, amount, onPress }) => {
   return (
     <S.Container
+      onPress={onPress}
       style={{
         ...Platform.select({
           ios: {
