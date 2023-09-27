@@ -1,17 +1,22 @@
 import * as S from "./styles";
 import ClientInfoBox from "../../../../components/ClientInfoBox";
+import { formatCpf } from "../../../../utils/formatCpf";
+import { formatDate } from "../../../../utils/formatDate";
 
 const ClientInfo = ({ data }) => {
   return (
     <S.Container>
-      <ClientInfoBox title="Nome" value="Sandra Elisa Farias de Jesus" />
+      <ClientInfoBox title="Nome" value={data?.nome} />
 
       <S.Wrapper>
-        <ClientInfoBox title="CPF" value="668.622.304-25" />
-        <ClientInfoBox title="Nascimento" value="22/12/1997" />
+        <ClientInfoBox title="CPF" value={formatCpf(String(data?.cpf))} />
+        <ClientInfoBox
+          title="Nascimento"
+          value={formatDate(String(data?.dataNascimento))}
+        />
       </S.Wrapper>
 
-      <ClientInfoBox title="Email" value="sandra.elisa@yahoo.com.br" />
+      <ClientInfoBox title="Email" value={data?.email} />
     </S.Container>
   );
 };

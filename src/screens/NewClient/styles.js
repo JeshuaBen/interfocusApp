@@ -59,3 +59,12 @@ export const RoundedButton = styled.TouchableOpacity`
   justify-content: center;
   z-index: 400;
 `;
+
+export const ErrorText = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    color: ${theme.COLORS.RED500};
+    font-family: ${theme.FONT_FAMILY.SEMIBOLD};
+    margin-top: 2px;
+  `};
+`;

@@ -2,7 +2,14 @@ import { useTheme } from "styled-components";
 import * as S from "./styles";
 import { Platform } from "react-native";
 
-const InputBox = ({ label, placeholder, fullWidth, select = false }) => {
+const InputBox = ({
+  label,
+  placeholder,
+  fullWidth,
+  select = false,
+  value,
+  onChangeText,
+}) => {
   const theme = useTheme();
 
   return (
@@ -32,7 +39,11 @@ const InputBox = ({ label, placeholder, fullWidth, select = false }) => {
           )}
         </S.SelectWrapper>
       ) : (
-        <S.Input placeholder={placeholder} />
+        <S.Input
+          placeholder={placeholder}
+          value={value}
+          onChangeText={onChangeText}
+        />
       )}
     </S.Container>
   );

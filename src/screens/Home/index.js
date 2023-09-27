@@ -2,8 +2,11 @@ import * as S from "./styles";
 
 import AllDebts from "../../components/AllDebts";
 import Header from "../../components/Header";
+import { useTheme } from "styled-components";
 
 const Home = () => {
+  const theme = useTheme();
+
   const temporaryCardInfos = [
     {
       title: "Dívidas em aberto",
@@ -21,6 +24,13 @@ const Home = () => {
       amount: "R$ 23.433.243,09",
     },
   ];
+
+  const getAllDebts = () => {
+    setIsLoading(true);
+
+    try {
+    } catch (error) {}
+  };
 
   return (
     <>

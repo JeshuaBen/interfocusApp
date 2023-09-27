@@ -33,7 +33,7 @@ export const Input = styled.TextInput`
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 `;
 
-export const Content = styled(ScrollView).attrs({
+export const Content = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
   margin-top: 16px;
@@ -51,4 +51,11 @@ export const RoundedButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   z-index: 400;
+`;
+
+export const LoadingContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
 `;
