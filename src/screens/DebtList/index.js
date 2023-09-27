@@ -1,14 +1,10 @@
 import * as S from "./styles";
-import { useTheme } from "styled-components";
-import Button from "../../components/Button";
-
 import Header from "../../components/Header";
-
-import ClientInfo from "./components/ClientInfo";
-import { Entypo } from "@expo/vector-icons";
 import DebtCard from "../../components/DebtCard";
+import Button from "../../components/Button";
+import { useTheme } from "styled-components";
 
-const ClientProfile = ({ navigation }) => {
+const DebtList = ({ navigation }) => {
   const theme = useTheme();
 
   const debtData = [
@@ -48,32 +44,12 @@ const ClientProfile = ({ navigation }) => {
   return (
     <S.Container>
       <Header
-        title="Clientes"
+        title="Listagem de dívidas"
         buttonVariant
         onPress={() => navigation.goBack()}
       />
-      <S.RoundedButton onPress={() => navigation.navigate("NewClient")}>
-        <Entypo name="plus" size={30} color={theme.COLORS.WHITE} />
-      </S.RoundedButton>
 
-      <S.Content>
-        <ClientInfo data={[]} />
-        <S.TextWrapper>
-          <S.Title>Dívidas</S.Title>
-          <Button
-            onPress={() => navigation.navigate("DebtList")}
-            text="Ver todas"
-            style={{
-              borderBottomWidth: 1,
-              borderBottomColor: theme.COLORS.GREEN500,
-            }}
-            textStyle={{
-              color: theme.COLORS.GREEN500,
-            }}
-          />
-        </S.TextWrapper>
-      </S.Content>
-      <S.DebtList
+      <S.Content
         data={debtData}
         renderItem={({ item }) => (
           <DebtCard
@@ -90,8 +66,37 @@ const ClientProfile = ({ navigation }) => {
           paddingBottom: 16,
         }}
       />
+
+      <S.Wrapper>
+        <S.TextContent
+          style={{
+            fontFamily: theme.FONT_FAMILY.BOLD,
+          }}
+        >
+          Total
+        </S.TextContent>
+        <S.TextContent
+          style={{
+            fontFamily: theme.FONT_FAMILY.REGULAR,
+          }}
+        >
+          R$ 230, 90
+        </S.TextContent>
+      </S.Wrapper>
+
+      <S.ButtonContainer>
+        <Button
+          text="Pagar"
+          style={{
+            backgroundColor: theme.COLORS.GREEN500,
+          }}
+          textStyle={{
+            color: theme.COLORS.WHITE,
+          }}
+        />
+      </S.ButtonContainer>
     </S.Container>
   );
 };
 
-export default ClientProfile;
+export default DebtList;
